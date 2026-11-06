@@ -1,0 +1,147 @@
+Die Vorbereitung ist abgeschlossen. **Die bestehende `index.html` ist unverändert**; das habe ich durch einen Dateivergleich geprüft. Es wurde nichts hochgeladen oder veröffentlicht. Echte Kundendaten wurden nicht verwendet.
+
+Das vorbereitete Paket liegt unter `/workspace/output/reife-leistung-github-pages.zip`. Da du keinen Dateibereich siehst, brauchst du dieses Paket für den folgenden Weg nicht: Du kannst den vollständigen Quelltext unten direkt aus dem Chat nach GitHub kopieren.
+
+**1. Kostenloses GitHub-Repository anlegen**
+
+1. Öffne [github.com](https://github.com) in Safari und melde dich an oder erstelle ein kostenloses Konto.
+2. Öffne [github.com/new](https://github.com/new).
+3. Trage als Repository-Namen `reife-leistung` ein.
+4. Wähle **Public** und aktiviere **Add a README file**.
+5. Tippe auf **Create repository**.
+
+Für GitHub Pages mit einem kostenlosen persönlichen GitHub-Konto verwenden wir ein öffentliches Repository. **Damit ist der hochgeladene Quelltext öffentlich; die spätere Website kann ebenfalls jeder aufrufen.** Deine im Trainingsplaner eingegebenen Angaben bleiben im Browser.
+
+Falls Bedienelemente fehlen, wähle in Safaris Seitenmenü **Desktop-Website anfordern**.
+
+**2. App ohne Download übertragen**
+
+1. Kopiere den **gesamten HTML-Codeblock am Ende dieser Antwort** über dessen Kopierschaltfläche.
+2. Öffne dein Repository in Safari.
+3. Wähle **Add file → Create new file**.
+4. Gib als Dateinamen exakt `index.html` ein.
+5. Tippe in das große Textfeld darunter und füge den kopierten Code ein.
+6. Kontrolliere: Der Inhalt beginnt mit `<!doctype html>` und endet mit `</body></html>`. Markdown-Markierungen wie drei Backticks dürfen nicht enthalten sein.
+7. Wähle **Commit changes…** und bestätige das Speichern auf dem Hauptbranch, üblicherweise `main`.
+
+Die Datei muss direkt im Hauptverzeichnis liegen. Weitere Dateien, Installationen oder Build-Einstellungen sind für diese App nicht erforderlich.
+
+Falls du später Dateien auf dem iPad vorliegen hast, geht alternativ **Add file → Upload files → choose your files → Dateien**. Lade dabei die entpackte `index.html` hoch, nicht die ZIP-Datei.
+
+**3. Veröffentlichung bewusst starten**
+
+Bis hierhin ist das öffentliche Repository angelegt, GitHub Pages aber noch nicht aktiviert. **Führe die folgenden Schritte erst aus, wenn du die Website veröffentlichen möchtest.** Ich habe diese Schritte nicht ausgeführt.
+
+1. Öffne im Repository **Settings → Pages**.
+2. Wähle unter **Build and deployment → Source** die Einstellung **Deploy from a branch**.
+3. Wähle den Hauptbranch, meist `main`, und den Ordner **/ (root)**.
+4. Tippe auf **Save**. Dadurch beginnt die Veröffentlichung.
+5. Warte einige Minuten und lade die Pages-Einstellungen erneut.
+
+GitHub zeigt dort nach erfolgreicher Bereitstellung deinen Website-Link an. Er sieht üblicherweise so aus:
+
+`https://DEIN-GITHUB-NAME.github.io/reife-leistung/`
+
+Verwende den tatsächlich angezeigten Link. Eine eigene Domain oder ein kostenpflichtiger Plan ist nicht nötig.
+
+**4. Auf dem iPad verwenden**
+
+Öffne den Website-Link in Safari. Teste die Eingaben, das Wechseln der Trainingstage, die Neugenerierung und **Drucken / PDF**.
+
+Über **Teilen → Zum Home-Bildschirm** kannst du einen Startlink anlegen. Die bestehende Version benötigt zum erneuten Laden eine Internetverbindung; sie ist keine Offline-PWA. Eingaben und Pläne werden nach dem Neuladen zurückgesetzt.
+
+Bei einer 404-Seite: einige Minuten warten und prüfen, ob `index.html` im Hauptverzeichnis des ausgewählten Branches liegt.
+
+**Vollständiger Inhalt für `index.html` – diesen Codeblock kopieren:**
+
+```html
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reife Leistung – Trainingsplaner</title>
+<style>
+:root{color-scheme:dark;--bg:#101713;--panel:#1b251f;--line:#38473d;--text:#f2f4ea;--muted:#b8c3b8;--green:#d1ef8a}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 system-ui,-apple-system,sans-serif}header,main,footer{max-width:1200px;margin:auto;padding:24px}header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}.brand{font-weight:800;letter-spacing:.08em}.badge,.eyebrow{color:var(--green);font-size:13px;letter-spacing:.12em;text-transform:uppercase}.hero{padding:35px 0 25px}h1{font-size:clamp(32px,5vw,54px);line-height:1.12;letter-spacing:-.04em;margin:12px 0}h2{font-size:23px;margin:0 0 16px}h3{margin:0;font-size:19px}p{margin:8px 0 18px}.muted,small{color:var(--muted)}.layout{display:grid;grid-template-columns:340px 1fr;gap:28px;align-items:start}.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px}label{display:block;margin:14px 0 5px;font-size:14px;font-weight:650}input,select,button{font:inherit;min-height:48px;border-radius:9px}input,select{width:100%;border:1px solid #526255;background:#111b15;color:var(--text);padding:10px 12px}button{cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--text);padding:10px 18px;font-weight:700}button.primary{background:var(--green);border-color:var(--green);color:#17200f;width:100%;margin-top:22px}button:hover{filter:brightness(1.12)}:focus-visible{outline:3px solid var(--green);outline-offset:3px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}.equipment{padding:12px;border:1px solid #6c8451;border-radius:9px;background:#273324}.equipment input{min-height:0;width:auto;margin-right:8px;accent-color:var(--green)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.stat{border:1px solid var(--line);border-radius:12px;padding:14px}.stat strong{display:block;font-size:23px;color:var(--green)}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}.tabs button[aria-pressed=true]{background:var(--green);color:#17200f}.phase{padding:16px 0;border-top:1px solid var(--line)}.phase small{display:block}.exercise{padding:17px 0;border-top:1px solid var(--line)}.exercise-top{display:flex;justify-content:space-between;gap:12px}.dose{color:var(--green);white-space:nowrap}.exercise p{font-size:14px;color:var(--muted);margin:5px 0}.metrics{font-size:14px;display:flex;gap:22px;flex-wrap:wrap}.notice{border-left:3px solid var(--green);padding:2px 0 2px 16px;margin-top:24px;font-size:14px}.error{color:#ffb8a9}.print-day{display:none}footer{font-size:13px;color:var(--muted)}@media(max-width:800px){.layout{grid-template-columns:1fr}header,main,footer{padding:18px}.hero{padding:22px 0}.badge{font-size:10px}.panel{padding:20px}.stats{gap:6px}.stat{padding:10px}.stat strong{font-size:20px}.exercise-top{display:block}}@media print{ :root{color-scheme:light}body{background:white;color:black;font-size:11pt}header{padding:0}.badge,.hero,form,.actions,.tabs,footer,.screen-day{display:none!important}.layout{display:block}.panel{background:white;color:black;border:0;padding:0}.print-day{display:block;break-before:page}.print-day:first-child{break-before:auto}.phase,.exercise{break-inside:avoid;border-color:#aaa}.muted,small,.exercise p{color:#333}.dose,.stat strong,.eyebrow{color:#222}.stats{margin:10px 0}.notice{border-color:#444}main{padding:10px}h1{font-size:24pt}.stat{border-color:#aaa}}
+</style>
+</head>
+<body>
+<header><div class="brand">REIFE LEISTUNG<span style="color:var(--green)"> ◒</span></div><span class="badge">Dein Tempo. Dein Fortschritt.</span></header>
+<main><section class="hero"><div class="eyebrow">Bodyweight · Version 1.0</div><h1>Stärker werden.<br>Mit einem Plan, der passt.</h1><p class="muted">Dein Trainingsplaner für Bewegung ohne Geräte – einfach, individuell und direkt im Browser.</p></section>
+<div class="layout"><form id="settings" class="panel"><h2>Dein Ausgangspunkt</h2><p class="muted">Ein paar Angaben. Eine Woche für dich.</p>
+<label for="age">Alter in Jahren</label><input id="age" name="age" type="number" min="18" max="100" value="55" required inputmode="numeric">
+<label for="level">Trainingslevel</label><select id="level" name="level"><option value="0">Anfänger</option><option value="1">Fortgeschritten</option><option value="2">Sehr fortgeschritten</option></select>
+<label for="goal">Trainingsziel</label><select id="goal" name="goal"><option value="fitness">Allgemeine Fitness</option><option value="strength">Kraft</option><option value="endurance-strength">Kraftausdauer</option><option value="cardio">Ausdauer</option></select>
+<div class="pair"><div><label for="duration">Minuten je Einheit</label><select id="duration" name="duration"><option>15</option><option selected>20</option><option>30</option><option>45</option><option>60</option></select></div><div><label for="days">Tage pro Woche</label><select id="days" name="days"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option><option>6</option></select></div></div>
+<label for="equipment">Trainingsmittel</label><div class="equipment"><input id="equipment" type="checkbox" checked disabled>Keine Geräte</div><small>Benötigt werden nur etwas Platz und ein rutschfester Untergrund.</small>
+<button class="primary" type="submit">Trainingsplan erstellen <span aria-hidden="true">↗</span></button><p id="error" class="error" role="alert"></p><small>Für Erwachsene von 18 bis 100 Jahren. Angaben und Plan bleiben nur in diesem geöffneten Tab.</small></form>
+<section aria-label="Dein Trainingsplan"><div class="panel"><div class="eyebrow">Deine Trainingswoche</div><h2 style="margin-top:8px">Ein guter Anfang für mehr Bewegung.</h2><div id="summary" aria-live="polite"></div><div class="actions"><button id="regenerate" type="button">↻ Neu zusammenstellen</button><button id="print" type="button">Drucken / PDF</button></div><div id="tabs" class="tabs" aria-label="Trainingstag auswählen"></div><div id="workouts"></div><aside class="notice"><strong>Bewusst trainieren</strong><p>Ruhig weiteratmen, Bewegungen kontrollieren und nur im schmerzfreien Bereich arbeiten. Bei Kraftübungen 2–3 saubere Wiederholungen als Reserve lassen. Bei Ausdauer solltest du noch kurze Sätze sprechen können.</p><p>Bei Schmerzen, Schwindel, Brustdruck oder ungewöhnlicher Atemnot abbrechen. Bei Erkrankungen, akuten Beschwerden oder nach längerer Pause den Einstieg ärztlich abklären. Der Plan ersetzt keine persönliche Trainings- oder medizinische Beratung.</p></aside></div></section></div></main>
+<footer>Reife Leistung – Trainingsplaner · Keine Registrierung · Keine KI-API · Keine Datenübertragung</footer>
+<script>
+'use strict';
+// Kleine Übungsdatenbank: je Bewegungsmuster drei Schwierigkeitsstufen.
+const DB={
+ squat:[['Kleine Kniebeuge','Hüfte nach hinten führen, Knie folgen den Fußspitzen. Nur so tief gehen, wie du sicher stehst.'],['Kniebeuge','Füße etwa schulterbreit; kontrolliert absenken und gleichmäßig aufrichten.'],['Langsame Kniebeuge','Drei Sekunden absenken, kurz halten und kontrolliert aufrichten.']],
+ push:[['Wandliegestütz','Hände an eine stabile Wand, Körper gerade. Abstand zur Wand bestimmt die Schwierigkeit.'],['Liegestütz auf Knien','Von Knien bis Kopf eine Linie halten; Ellbogen schräg nach hinten führen.'],['Liegestütz','Rumpf anspannen, Körper als Einheit absenken. Bei Bedarf auf Knien ausführen.']],
+ hip:[['Beckenheben','In Rückenlage Füße aufstellen und Becken ohne Hohlkreuz anheben.'],['Beckenheben mit Halten','Becken anheben, oben zwei Sekunden halten; Rippen nicht nach oben schieben.'],['Beckenheben im Wechsel','Oben abwechselnd eine Ferse leicht entlasten, das Becken waagerecht halten.']],
+ core:[['Fersenschieben in Rückenlage','Ein Bein langsam ausstrecken und zurückführen, dann wechseln. Rücken angenehm stabil halten.'],['Dead Bug','Gegenüberliegenden Arm und Bein langsam absenken; nur so weit wie der Rücken stabil bleibt.'],['Unterarmstütz','Ellbogen unter den Schultern, Rumpf fest, gleichmäßig atmen. Bei Bedarf Knie ablegen.']],
+ back:[['Schulterblatt-Zug im Stand','Arme als W halten, Schulterblätter sanft zusammenführen und wieder lösen.'],['W-Heben in Bauchlage','Stirn bodennah, Arme als W leicht anheben. Nacken lang lassen.'],['Reverse Snow Angels','In Bauchlage Arme langsam seitlich führen, Schultern tief halten; kein Hohlkreuz.']],
+ cardio:[['Marschieren am Platz','Leise auftreten und Arme locker mitnehmen. Tempo so wählen, dass Sprechen möglich bleibt.'],['Seitwärtsschritte mit Armschwung','Abwechselnd seitlich treten, Arme mitnehmen; ohne Sprünge.'],['Schattenboxen mit Schritten','Locker und kontrolliert boxen, kleine Schritte; Gelenke nicht durchstrecken.']]
+};
+const schedules={1:[0],2:[0,3],3:[0,2,4],4:[0,2,4,6],5:[0,1,2,4,5],6:[0,1,2,3,4,5]}, weekdays=['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag'];
+let current=null,selected=0,revision=0;
+const $=id=>document.getElementById(id);
+function readSettings(){return {age:Number($('age').value),level:Number($('level').value),goal:$('goal').value,duration:Number($('duration').value),days:Number($('days').value),label:$('goal').selectedOptions[0].textContent};}
+// Geschätzte Dauer umfasst Arbeitszeit, Satzpausen und Übungswechsel.
+function createPlan(s,seed){
+ const warm= s.duration>=30?6:4,cool=s.duration>=30?4:3;
+ const baseSets=s.level===0?2:3;
+ const pause=(s.goal==='strength'?75:s.goal==='endurance-strength'?40:50)+(s.age>=65?15:0);
+ const seconds=s.goal==='strength'?30:s.goal==='endurance-strength'?40:35;
+ let keys=s.goal==='cardio'?['cardio','squat','cardio','core']:['squat','push','hip','back','core'];
+ if(s.goal==='fitness')keys.push('cardio');
+ keys=keys.slice(seed%keys.length).concat(keys.slice(0,seed%keys.length));
+ const budget=(s.duration-warm-cool)*60;
+ let count=Math.min(keys.length,6),sets=baseSets;
+ const estimate=(n,k)=>n*(k*seconds+(k-1)*pause)+Math.max(0,n-1)*25;
+ while(estimate(count,sets)>budget&&sets>1)sets--;
+ while(estimate(count,sets)>budget&&count>2)count--;
+ const result=schedules[s.days].map((day,i)=>{
+  // Höchstens drei Belastungstage; übrige Tage dienen aktiver Erholung.
+  const light=(s.days>=4 && i%2===1) || (s.days===6&&i===5);
+  const exercises=Array.from({length:count},(_,j)=>{
+   const key=keys[(j+i)%keys.length];
+   const variant=key==='cardio'?(s.level+seed+i+j)%3:s.level;
+   const [name,hint]=DB[key][variant];
+   const timed=key==='cardio'||(key==='core'&&s.level===2);
+   return {name,hint,sets,work:seconds,pause,dose:timed?seconds+' Sek.':(s.goal==='strength'?'6–8':s.goal==='endurance-strength'?'10–12':'8–10')+' Wdh.', bilateral:key==='core'&&s.level<2||key==='hip'&&s.level===2};
+  });
+  const extra = Math.max(0, Math.floor(s.duration - warm - cool - estimate(count,sets)/60));
+  return {day:weekdays[day],light,exercises,extra,minutes:light?s.duration:warm+cool+estimate(count,sets)/60+extra};
+ });
+ return {settings:s,warm,cool,days:result};
+}
+function dayHTML(d,index,p){
+ const s=p.settings;
+ const warmText='Locker marschieren, Schultern kreisen, Fußgelenke bewegen und flache Kniebeugen ausprobieren. Intensität langsam steigern.';
+ const coolText='Langsam gehen, Atmung beruhigen und Waden, Brust sowie Hüfte sanft dehnen. Nicht in den Schmerz ziehen.';
+ let body;
+ if(d.light){body=`<div class="phase"><h3>Leichter Bewegungstag</h3><p>${s.duration- p.warm-p.cool} Min. entspannt am Platz gehen und lockere Seitwärtsschritte ausführen. Du solltest dich mühelos unterhalten können. Bei Müdigkeit stattdessen pausieren.</p><small>1 Durchgang · Tempo jederzeit reduzieren · Pausen nach Bedarf</small></div>`;}
+ else body=d.exercises.map((e,j)=>`<article class="exercise"><div class="exercise-top"><h3>${String(j+1).padStart(2,'0')} · ${e.name}</h3><span class="dose">${e.dose}</span></div><p>${e.hint}</p><div class="metrics"><span>${e.sets} ${e.sets===1?'Satz':'Sätze'}</span><span>${e.pause} Sek. Satzpause</span><span>ca. ${e.work} Sek. je Satz</span></div><small>Zwischen Übungen ca. 25 Sek. wechseln. Bei Bedarf länger pausieren; die Einheit dauert dann entsprechend länger.</small>${e.bilateral?'<small>Wiederholungen insgesamt, gleichmäßig auf beide Seiten verteilen.</small>':''}</article>`).join('');
+ if(!d.light && d.extra>0) body += `<div class="phase"><h3>Lockere Bewegung · ${d.extra} Min.</h3><small>Entspannt am Platz gehen oder lockere Seitwärtsschritte machen. Sprechtempo beibehalten, Pausen nach Bedarf. Diese Zeit ergänzt den Kraftteil ohne zusätzliche schwere Sätze.</small></div>`;
+ return `<h2>${d.day} <span class="muted">/ ${d.light?'Aktive Erholung':'Ganzkörper'}</span></h2><p class="muted">${d.light?s.duration:Math.ceil(d.minutes)} Min. geschätzt · ${d.light?'Sehr leicht':s.level===0?'Leicht bis moderat':'Moderat, ohne Muskelversagen'}</p><div class="phase"><h3>01 / Aufwärmen · ${p.warm} Min.</h3><small>${warmText}</small></div>${body}<div class="phase"><h3>03 / Cool-down · ${p.cool} Min.</h3><small>${coolText}</small></div>`;
+}
+function render(){
+ const p=current,s=p.settings,hard=p.days.filter(d=>!d.light).length;
+ $('summary').innerHTML=`<p class="muted">${s.label} · ${['Anfänger','Fortgeschritten','Sehr fortgeschritten'][s.level]} · ${s.age} Jahre</p><div class="stats"><div class="stat"><strong>${s.days} Tage</strong>pro Woche</div><div class="stat"><strong>≤ ${s.duration} Min.</strong>je Einheit</div><div class="stat"><strong>0 Geräte</strong>volle Flexibilität</div></div><small>${hard} Belastungstage${s.days-hard?' + '+(s.days-hard)+' leichte Bewegungstage':''}. Freie Tage dienen der Erholung. Vor einem weiteren Krafttag möglichst 48 Stunden Pause lassen; den Wochenplan bei Bedarf verschieben. Nach 2–3 gut vertragenen Einheiten zuerst einzelne Wiederholungen steigern.</small>`;
+ $('tabs').innerHTML=p.days.map((d,i)=>`<button type="button" data-day="${i}" aria-pressed="${i===selected}">${d.day.slice(0,2)} <small>${d.light?'○':'●'}</small></button>`).join('');
+ $('workouts').innerHTML=`<div class="screen-day">${dayHTML(p.days[selected],selected,p)}</div><div>${p.days.map((d,i)=>`<section class="print-day">${dayHTML(d,i,p)}</section>`).join('')}</div>`;
+}
+function generate(event){if(event)event.preventDefault();if(!$('settings').reportValidity())return;const s=readSettings();if(!Number.isInteger(s.age)||s.age<18||s.age>100){$('error').textContent='Bitte ein ganzzahliges Alter zwischen 18 und 100 eingeben.';return;}$('error').textContent='';current=createPlan(s,revision++);selected=0;render();}
+$('settings').addEventListener('submit',generate);
+$('regenerate').addEventListener('click',generate);
+$('print').addEventListener('click',()=>window.print());
+$('tabs').addEventListener('click',e=>{const b=e.target.closest('[data-day]');if(b){selected=Number(b.dataset.day);render();}});
+generate();
+</script>
+</body></html>
+```
