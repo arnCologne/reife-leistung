@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reife Leistung – Trainingsplaner</title>
+<style>
+:root{color-scheme:dark;--bg:#101713;--panel:#1b251f;--line:#38473d;--text:#f2f4ea;--muted:#b8c3b8;--green:#d1ef8a}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 system-ui,-apple-system,sans-serif}header,main,footer{max-width:1200px;margin:auto;padding:24px}header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}.brand{font-weight:800;letter-spacing:.08em}.badge,.eyebrow{color:var(--green);font-size:13px;letter-spacing:.12em;text-transform:uppercase}.hero{padding:35px 0 25px}h1{font-size:clamp(32px,5vw,54px);line-height:1.12;letter-spacing:-.04em;margin:12px 0}h2{font-size:23px;margin:0 0 16px}h3{margin:0;font-size:19px}p{margin:8px 0 18px}.muted,small{color:var(--muted)}.layout{display:grid;grid-template-columns:340px 1fr;gap:28px;align-items:start}.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px}label{display:block;margin:14px 0 5px;font-size:14px;font-weight:650}input,select,button{font:inherit;min-height:48px;border-radius:9px}input,select{width:100%;border:1px solid #526255;background:#111b15;color:var(--text);padding:10px 12px}button{cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--text);padding:10px 18px;font-weight:700}button.primary{background:var(--green);border-color:var(--green);color:#17200f;width:100%;margin-top:22px}button:hover{filter:brightness(1.12)}:focus-visible{outline:3px solid var(--green);outline-offset:3px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}.equipment{padding:12px;border:1px solid #6c8451;border-radius:9px;background:#273324}.equipment input{min-height:0;width:auto;margin-right:8px;accent-color:var(--green)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.stat{border:1px solid var(--line);border-radius:12px;padding:14px}.stat strong{display:block;font-size:23px;color:var(--green)}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}.tabs button[aria-pressed=true]{background:var(--green);color:#17200f}.phase{padding:16px 0;border-top:1px solid var(--line)}.phase small{display:block}.exercise{padding:17px 0;border-top:1px solid var(--line)}.exercise-top{display:flex;justify-content:space-between;gap:12px}.dose{color:var(--green);white-space:nowrap}.exercise p{font-size:14px;color:var(--muted);margin:5px 0}.metrics{font-size:14px;display:flex;gap:22px;flex-wrap:wrap}.notice{border-left:3px solid var(--green);padding:2px 0 2px 16px;margin-top:24px;font-size:14px}.error{color:#ffb8a9}.print-day{display:none}footer{font-size:13px;color:var(--muted)}@media(max-width:800px){.layout{grid-template-columns:1fr}header,main,footer{padding:18px}.hero{padding:22px 0}.badge{font-size:10px}.panel{padding:20px}.stats{gap:6px}.stat{padding:10px}.stat strong{font-size:20px}.exercise-top{display:block}}@media print{ :root{color-scheme:light}body{background:white;color:black;font-size:11pt}header{padding:0}.badge,.hero,form,.actions,.tabs,footer,.screen-day{display:none!important}.layout{display:block}.panel{background:white;color:black;border:0;padding:0}.print-day{display:block;break-before:page}.print-day:first-child{break-before:auto}.phase,.exercise{break-inside:avoid;border-color:#aaa}.muted,small,.exercise p{color:#333}.dose,.stat strong,.eyebrow{color:#222}.stats{margin:10px 0}.notice{border-color:#444}main{padding:10px}h1{font-size:24pt}.stat{border-color:#aaa}}
+</style>
+</head>
+<body>
+<header><div class="brand">REIFE LEISTUNG<span style="color:var(--green)"> ◒</span></div><span class="badge">Dein Tempo. Dein Fortschritt.</span></header>
+<main><section class="hero"><div class="eyebrow">Bodyweight · Version 1.0</div><h1>Stärker werden.<br>Mit einem Plan, der passt.</h1><p class="muted">Dein Trainingsplaner für Bewegung ohne Geräte – einfach, individuell und direkt im Browser.</p></section>
+<div class="layout"><form id="settings" class="panel"><h2>Dein Ausgangspunkt</h2><p class="muted">Ein paar Angaben. Eine Woche für dich.</p>
+<label for="age">Alter in Jahren</label><input id="age" name="age" type="number" min="18" max="100" value="55" required inputmode="numeric">
+<label for="level">Trainingslevel</label><select id="level" name="level"><option value="0">Anfänger</option><option value="1">Fortgeschritten</option><option value="2">Sehr fortgeschritten</option></select>
+<label for="goal">Trainingsziel</label><select id="goal" name="goal"><option value="fitness">Allgemeine Fitness</option><option value="strength">Kraft</option><option value="endurance-strength">Kraftausdauer</option><option value="cardio">Ausdauer</option></select>
+<div class="pair"><div><label for="duration">Minuten je Einheit</label><select id="duration" name="duration"><option>15</option><option selected>20</option><option>30</option><option>45</option><option>60</option></select></div><div><label for="days">Tage pro Woche</label><select id="days" name="days"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option><option>6</option></select></div></div>
+<label for="equipment">Trainingsmittel</label><div class="equipment"><input id="equipment" type="checkbox" checked disabled>Keine Geräte</div><small>Benötigt werden nur etwas Platz und ein rutschfester Untergrund.</small>
+<button class="primary" type="submit">Trainingsplan erstellen <span aria-hidden="true">↗</span></button><p id="error" class="error" role="alert"></p><small>Für Erwachsene von 18 bis 100 Jahren. Angaben und Plan bleiben nur in diesem geöffneten Tab.</small></form>
+<section aria-label="Dein Trainingsplan"><div class="panel"><div class="eyebrow">Deine Trainingswoche</div><h2 style="margin-top:8px">Ein guter Anfang für mehr Bewegung.</h2><div id="summary" aria-live="polite"></div><div class="actions"><button id="regenerate" type="button">↻ Neu zusammenstellen</button><button id="print" type="button">Drucken / PDF</button></div><div id="tabs" class="tabs" aria-label="Trainingstag auswählen"></div><div id="workouts"></div><aside class="notice"><strong>Bewusst trainieren</strong><p>Ruhig weiteratmen, Bewegungen kontrollieren und nur im schmerzfreien Bereich arbeiten. Bei Kraftübungen 2–3 saubere Wiederholungen als Reserve lassen. Bei Ausdauer solltest du noch kurze Sätze sprechen können.</p><p>Bei Schmerzen, Schwindel, Brustdruck oder ungewöhnlicher Atemnot abbrechen. Bei Erkrankungen, akuten Beschwerden oder nach längerer Pause den Einstieg ärztlich abklären. Der Plan ersetzt keine persönliche Trainings- oder medizinische Beratung.</p></aside></div></section></div></main>
+<footer>Reife Leistung – Trainingsplaner · Keine Registrierung · Keine KI-API · Keine Datenübertragung</footer>
+<script>
+'use strict';
+// Kleine Übungsdatenbank: je Bewegungsmuster drei Schwierigkeitsstufen.
+const DB={
+ squat:[['Kleine Kniebeuge','Hüfte nach hinten führen, Knie folgen den Fußspitzen. Nur so tief gehen, wie du sicher stehst.'],['Kniebeuge','Füße etwa schulterbreit; kontrolliert absenken und gleichmäßig aufrichten.'],['Langsame Kniebeuge','Drei Sekunden absenken, kurz halten und kontrolliert aufrichten.']],
+ push:[['Wandliegestütz','Hände an eine stabile Wand, Körper gerade. Abstand zur Wand bestimmt die Schwierigkeit.'],['Liegestütz auf Knien','Von Knien bis Kopf eine Linie halten; Ellbogen schräg nach hinten führen.'],['Liegestütz','Rumpf anspannen, Körper als Einheit absenken. Bei Bedarf auf Knien ausführen.']],
+ hip:[['Beckenheben','In Rückenlage Füße aufstellen und Becken ohne Hohlkreuz anheben.'],['Beckenheben mit Halten','Becken anheben, oben zwei Sekunden halten; Rippen nicht nach oben schieben.'],['Beckenheben im Wechsel','Oben abwechselnd eine Ferse leicht entlasten, das Becken waagerecht halten.']],
+ core:[['Fersenschieben in Rückenlage','Ein Bein langsam ausstrecken und zurückführen, dann wechseln. Rücken angenehm stabil halten.'],['Dead Bug','Gegenüberliegenden Arm und Bein langsam absenken; nur so weit wie der Rücken stabil bleibt.'],['Unterarmstütz','Ellbogen unter den Schultern, Rumpf fest, gleichmäßig atmen. Bei Bedarf Knie ablegen.']],
+ back:[['Schulterblatt-Zug im Stand','Arme als W halten, Schulterblätter sanft zusammenführen und wieder lösen.'],['W-Heben in Bauchlage','Stirn bodennah, Arme als W leicht anheben. Nacken lang lassen.'],['Reverse Snow Angels','In Bauchlage Arme langsam seitlich führen, Schultern tief halten; kein Hohlkreuz.']],
+ cardio:[['Marschieren am Platz','Leise auftreten und Arme locker mitnehmen. Tempo so wählen, dass Sprechen möglich bleibt.'],['Seitwärtsschritte mit Armschwung','Abwechselnd seitlich treten, Arme mitnehmen; ohne Sprünge.'],['Schattenboxen mit Schritten','Locker und kontrolliert boxen, kleine Schritte; Gelenke nicht durchstrecken.']]
+};
+const schedules={1:[0],2:[0,3],3:[0,2,4],4:[0,2,4,6],5:[0,1,2,4,5],6:[0,1,2,3,4,5]}, weekdays=['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag'];
+let current=null,selected=0,revision=0;
+const $=id=>document.getElementById(id);
+function readSettings(){return {age:Number($('age').value),level:Number($('level').value),goal:$('goal').value,duration:Number($('duration').value),days:Number($('days').value),label:$('goal').selectedOptions[0].textContent};}
+// Geschätzte Dauer umfasst Arbeitszeit, Satzpausen und Übungswechsel.
+function createPlan(s,seed){
+ const warm= s.duration>=30?6:4,cool=s.duration>=30?4:3;
+ const baseSets=s.level===0?2:3;
+ const pause=(s.goal==='strength'?75:s.goal==='endurance-strength'?40:50)+(s.age>=65?15:0);
+ const seconds=s.goal==='strength'?30:s.goal==='endurance-strength'?40:35;
+ let keys=s.goal==='cardio'?['cardio','squat','cardio','core']:['squat','push','hip','back','core'];
+ if(s.goal==='fitness')keys.push('cardio');
+ keys=keys.slice(seed%keys.length).concat(keys.slice(0,seed%keys.length));
+ const budget=(s.duration-warm-cool)*60;
+ let count=Math.min(keys.length,6),sets=baseSets;
+ const estimate=(n,k)=>n*(k*seconds+(k-1)*pause)+Math.max(0,n-1)*25;
+ while(estimate(count,sets)>budget&&sets>1)sets--;
+ while(estimate(count,sets)>budget&&count>2)count--;
+ const result=schedules[s.days].map((day,i)=>{
+  // Höchstens drei Belastungstage; übrige Tage dienen aktiver Erholung.
+  const light=(s.days>=4 && i%2===1) || (s.days===6&&i===5);
+  const exercises=Array.from({length:count},(_,j)=>{
+   const key=keys[(j+i)%keys.length];
+   const variant=key==='cardio'?(s.level+seed+i+j)%3:s.level;
+   const [name,hint]=DB[key][variant];
+   const timed=key==='cardio'||(key==='core'&&s.level===2);
+   return {name,hint,sets,work:seconds,pause,dose:timed?seconds+' Sek.':(s.goal==='strength'?'6–8':s.goal==='endurance-strength'?'10–12':'8–10')+' Wdh.', bilateral:key==='core'&&s.level<2||key==='hip'&&s.level===2};
+  });
+  const extra = Math.max(0, Math.floor(s.duration - warm - cool - estimate(count,sets)/60));
+  return {day:weekdays[day],light,exercises,extra,minutes:light?s.duration:warm+cool+estimate(count,sets)/60+extra};
+ });
+ return {settings:s,warm,cool,days:result};
+}
+function dayHTML(d,index,p){
+ const s=p.settings;
+ const warmText='Locker marschieren, Schultern kreisen, Fußgelenke bewegen und flache Kniebeugen ausprobieren. Intensität langsam steigern.';
+ const coolText='Langsam gehen, Atmung beruhigen und Waden, Brust sowie Hüfte sanft dehnen. Nicht in den Schmerz ziehen.';
+ let body;
+ if(d.light){body=`<div class="phase"><h3>Leichter Bewegungstag</h3><p>${s.duration- p.warm-p.cool} Min. entspannt am Platz gehen und lockere Seitwärtsschritte ausführen. Du solltest dich mühelos unterhalten können. Bei Müdigkeit stattdessen pausieren.</p><small>1 Durchgang · Tempo jederzeit reduzieren · Pausen nach Bedarf</small></div>`;}
+ else body=d.exercises.map((e,j)=>`<article class="exercise"><div class="exercise-top"><h3>${String(j+1).padStart(2,'0')} · ${e.name}</h3><span class="dose">${e.dose}</span></div><p>${e.hint}</p><div class="metrics"><span>${e.sets} ${e.sets===1?'Satz':'Sätze'}</span><span>${e.pause} Sek. Satzpause</span><span>ca. ${e.work} Sek. je Satz</span></div><small>Zwischen Übungen ca. 25 Sek. wechseln. Bei Bedarf länger pausieren; die Einheit dauert dann entsprechend länger.</small>${e.bilateral?'<small>Wiederholungen insgesamt, gleichmäßig auf beide Seiten verteilen.</small>':''}</article>`).join('');
+ if(!d.light && d.extra>0) body += `<div class="phase"><h3>Lockere Bewegung · ${d.extra} Min.</h3><small>Entspannt am Platz gehen oder lockere Seitwärtsschritte machen. Sprechtempo beibehalten, Pausen nach Bedarf. Diese Zeit ergänzt den Kraftteil ohne zusätzliche schwere Sätze.</small></div>`;
+ return `<h2>${d.day} <span class="muted">/ ${d.light?'Aktive Erholung':'Ganzkörper'}</span></h2><p class="muted">${d.light?s.duration:Math.ceil(d.minutes)} Min. geschätzt · ${d.light?'Sehr leicht':s.level===0?'Leicht bis moderat':'Moderat, ohne Muskelversagen'}</p><div class="phase"><h3>01 / Aufwärmen · ${p.warm} Min.</h3><small>${warmText}</small></div>${body}<div class="phase"><h3>03 / Cool-down · ${p.cool} Min.</h3><small>${coolText}</small></div>`;
+}
+function render(){
+ const p=current,s=p.settings,hard=p.days.filter(d=>!d.light).length;
+ $('summary').innerHTML=`<p class="muted">${s.label} · ${['Anfänger','Fortgeschritten','Sehr fortgeschritten'][s.level]} · ${s.age} Jahre</p><div class="stats"><div class="stat"><strong>${s.days} Tage</strong>pro Woche</div><div class="stat"><strong>≤ ${s.duration} Min.</strong>je Einheit</div><div class="stat"><strong>0 Geräte</strong>volle Flexibilität</div></div><small>${hard} Belastungstage${s.days-hard?' + '+(s.days-hard)+' leichte Bewegungstage':''}. Freie Tage dienen der Erholung. Vor einem weiteren Krafttag möglichst 48 Stunden Pause lassen; den Wochenplan bei Bedarf verschieben. Nach 2–3 gut vertragenen Einheiten zuerst einzelne Wiederholungen steigern.</small>`;
+ $('tabs').innerHTML=p.days.map((d,i)=>`<button type="button" data-day="${i}" aria-pressed="${i===selected}">${d.day.slice(0,2)} <small>${d.light?'○':'●'}</small></button>`).join('');
+ $('workouts').innerHTML=`<div class="screen-day">${dayHTML(p.days[selected],selected,p)}</div><div>${p.days.map((d,i)=>`<section class="print-day">${dayHTML(d,i,p)}</section>`).join('')}</div>`;
+}
+function generate(event){if(event)event.preventDefault();if(!$('settings').reportValidity())return;const s=readSettings();if(!Number.isInteger(s.age)||s.age<18||s.age>100){$('error').textContent='Bitte ein ganzzahliges Alter zwischen 18 und 100 eingeben.';return;}$('error').textContent='';current=createPlan(s,revision++);selected=0;render();}
+$('settings').addEventListener('submit',generate);
+$('regenerate').addEventListener('click',generate);
+$('print').addEventListener('click',()=>window.print());
+$('tabs').addEventListener('click',e=>{const b=e.target.closest('[data-day]');if(b){selected=Number(b.dataset.day);render();}});
+generate();
+</script>
+<!-- REIFE LEISTUNG: Animierte Übungsliste -->
+<style>
+.exercise-library{margin-top:36px}.library-heading{display:flex;justify-content:space-between;gap:18px;align-items:start;flex-wrap:wrap}.library-heading h2{margin:8px 0}.library-filter{max-width:280px}.library-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px}.motion-card{padding:18px;display:flex;flex-direction:column}.motion-card[hidden]{display:none}.motion-card h3{margin:12px 0 5px}.motion-card p{font-size:14px;flex:1}.motion-stage{width:100%;height:auto;display:block;background:#111b15;border-radius:12px}.motion-stage line,.motion-stage polyline{stroke:#d1ef8a;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;fill:none}.motion-stage .motion-ground{stroke:#526255;stroke-width:1}.motion-stage circle{fill:#d1ef8a}.motion-card button{width:100%}.motion-status{font-size:13px;color:var(--muted);min-height:24px;margin-top:5px}.library-intro{max-width:850px}.library-filter label{margin-top:0}@media(max-width:950px){.library-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.library-grid{grid-template-columns:1fr}}@media print{.exercise-library{display:none!important}}
+</style>
+<section class="exercise-library" id="exercise-library" aria-labelledby="library-title">
+<div class="library-heading"><div><div class="eyebrow">Bewegung verstehen</div><h2 id="library-title">Deine Übungsbibliothek</h2></div><div class="library-filter"><label for="motion-filter">Bewegungsmuster</label><select id="motion-filter"><option value="all">Alle Übungen</option><option value="squat">Kniebeugen</option><option value="push">Drücken</option><option value="hip">Hüfte & Gesäß</option><option value="core">Rumpf</option><option value="back">Rücken & Schultern</option><option value="cardio">Ausdauer</option></select></div></div>
+<p class="muted library-intro">Alle 18 Übungen aus deinem Trainingsplaner als einfache Bewegungsanimation. Tippe auf „Animation starten“. Es läuft immer nur eine Animation gleichzeitig.</p>
+<p class="muted library-intro"><small>Die Strichfiguren zeigen den Bewegungsablauf schematisch. Tempo, Bewegungsumfang und Körperproportionen sind keine exakte Technikvorgabe. Beachte immer die Übungshinweise und trainiere schmerzfrei. Wandliegestütze nutzen eine stabile Wand.</small></p>
+<p id="library-count" class="muted" role="status"></p><div id="library-grid" class="library-grid"></div>
+</section>
+<script>
+(()=>{
+'use strict';
+// Jeder Punkt ist [x,y]: Kopf, Schulter, Hüfte, linker Ellbogen/Hand,
+// rechter Ellbogen/Hand, linkes Knie/Fuß, rechtes Knie/Fuß.
+// Zwei Schlüsselbilder werden weich hin und zurück interpoliert.
+const stand=[[120,28],[120,45],[120,90],[102,65],[100,87],[138,65],[140,87],[105,119],[98,148],[135,119],[142,148]];
+const squatSmall=[[113,39],[114,56],[131,97],[98,70],[88,78],[100,70],[90,78],[103,117],[98,148],[139,119],[142,148]];
+const squatDeep=[[105,57],[107,74],[137,109],[88,75],[71,74],[92,76],[76,74],[105,120],[98,148],[142,123],[142,148]];
+const wallA=[[148,33],[136,46],[111,92],[167,53],[194,59],[166,57],[194,64],[100,119],[87,148],[105,121],[94,148]];
+const wallB=[[175,40],[162,51],[128,96],[178,72],[194,59],[180,76],[194,64],[110,121],[87,148],[116,124],[94,148]];
+const pushA=[[177,66],[161,79],[102,111],[161,108],[170,148],[151,108],[159,148],[70,129],[36,148],[66,128],[30,148]];
+const pushB=[[180,108],[162,114],[102,130],[142,132],[170,148],[134,132],[159,148],[70,139],[36,148],[66,139],[30,148]];
+const kneeA=pushA.map(p=>p.slice()),kneeB=pushB.map(p=>p.slice());
+kneeA[7]=[76,148];kneeA[8]=[39,135];kneeA[9]=[70,148];kneeA[10]=[33,135];
+kneeB[7]=[76,148];kneeB[8]=[39,135];kneeB[9]=[70,148];kneeB[10]=[33,135];
+const supine=[[40,136],[57,137],[116,137],[78,143],[105,147],[78,132],[104,132],[149,103],[177,148],[145,106],[171,148]];
+const bridge=[[40,136],[57,137],[110,104],[78,143],[105,147],[78,132],[104,132],[149,103],[177,148],[145,106],[171,148]];
+const bridgeMarch=bridge.map(p=>p.slice());bridgeMarch[9]=[118,72];bridgeMarch[10]=[155,91];
+const heelA=supine.map(p=>p.slice()),heelB=supine.map(p=>p.slice());heelB[9]=[153,139];heelB[10]=[192,148];
+const deadA=[[40,136],[57,137],[116,137],[62,109],[66,79],[67,111],[72,81],[121,100],[158,100],[131,104],[167,104]];
+const deadB=[[40,136],[57,137],[116,137],[39,115],[15,96],[67,111],[72,81],[151,132],[188,144],[131,104],[167,104]];
+const plankA=[[181,81],[165,94],[105,115],[159,148],[190,148],[149,145],[179,145],[70,130],[36,148],[65,127],[31,145]];
+const plankB=plankA.map(p=>p.slice());plankB[0][1]-=1;plankB[1][1]-=1;
+const wA=[[120,28],[120,48],[120,95],[89,70],[91,45],[151,70],[149,45],[108,121],[105,148],[132,121],[135,148]];
+const wB=wA.map(p=>p.slice());wB[3]=[96,64];wB[4]=[99,37];wB[5]=[144,64];wB[6]=[141,37];
+const proneA=[[179,137],[162,137],[103,137],[160,118],[186,108],[151,119],[175,108],[70,141],[36,146],[65,136],[31,140]];
+const proneB=proneA.map(p=>p.slice());proneB[3][1]-=8;proneB[4][1]-=8;proneB[5][1]-=8;proneB[6][1]-=8;
+const angelsA=proneA.map(p=>p.slice()),angelsB=proneB.map(p=>p.slice());
+angelsA[3]=[137,116];angelsA[4]=[112,102];angelsA[5]=[135,124];angelsA[6]=[111,118];
+angelsB[3]=[183,112];angelsB[4]=[209,100];angelsB[5]=[183,122];angelsB[6]=[212,116];
+const marchA=stand.map(p=>p.slice()),marchB=stand.map(p=>p.slice());
+marchA[3]=[100,64];marchA[4]=[88,48];marchA[9]=[144,101];marchA[10]=[144,126];
+marchB[5]=[140,64];marchB[6]=[152,48];marchB[7]=[96,101];marchB[8]=[96,126];
+const stepA=stand.map(p=>p.slice()),stepB=stand.map(p=>p.slice());
+stepA[7]=[93,119];stepA[8]=[77,148];stepA[3]=[92,50];stepA[4]=[69,48];
+stepB[9]=[147,119];stepB[10]=[163,148];stepB[5]=[148,50];stepB[6]=[171,48];
+const boxA=stand.map(p=>p.slice()),boxB=stand.map(p=>p.slice());
+boxA[3]=[95,48];boxA[4]=[72,46];boxA[5]=[140,62];boxA[6]=[137,41];boxA[8]=[87,148];
+boxB[5]=[145,48];boxB[6]=[168,46];boxB[3]=[100,62];boxB[4]=[103,41];boxB[10]=[153,148];
+const poses={squat:[[stand,squatSmall],[stand,squatDeep],[stand,squatDeep]],push:[[wallA,wallB],[kneeA,kneeB],[pushA,pushB]],hip:[[supine,bridge],[supine,bridge],[bridge,bridgeMarch]],core:[[heelA,heelB],[deadA,deadB],[plankA,plankB]],back:[[wA,wB],[proneA,proneB],[angelsA,angelsB]],cardio:[[marchA,marchB],[stepA,stepB],[boxA,boxB]]};
+const levels=['Anfänger','Fortgeschritten','Sehr fortgeschritten'];
+const notes={squat:['Kleine, kontrollierte Bewegung.','Nur so tief gehen, wie du stabil bleibst.','Drei Sekunden absenken; Animation zeigt nur den Ablauf.'],push:['Die senkrechte Linie stellt die Wand dar.','Knie am Boden lassen.','Körper als Einheit bewegen.'],hip:['Becken anheben und wieder ablegen.','Oben zwei Sekunden halten.','Oben abwechselnd eine Ferse entlasten; beide Seiten trainieren.'],core:['Langsam schieben, beide Seiten abwechseln.','Gegenüberliegenden Arm und Bein bewegen; beide Seiten trainieren.','Statische Halteübung: Position halten, dabei ruhig atmen.'],back:['Schulterblätter sanft bewegen, nicht hochziehen.','Nur wenige Zentimeter anheben; Nacken lang.','Arme bodennah bewegen; Darstellung aus schräger Perspektive.'],cardio:['Abwechselnd die Füße anheben.','Seitlich treten, ohne zu springen.','Locker boxen und kleine Schritte ergänzen.']};
+const library=document.getElementById('exercise-library');
+document.querySelector('main').append(library);
+const grid=document.getElementById('library-grid');
+const cards=[];let active=null,frame=0,start=0;
+const ns='http://www.w3.org/2000/svg';
+function element(name,attrs,parent){const el=document.createElementNS(ns,name);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,v));parent.append(el);return el;}
+function paint(card,t){const [a,b]=card.poses;const p=a.map((point,i)=>point.map((v,j)=>v+(b[i][j]-v)*t));card.head.setAttribute('cx',p[0][0]);card.head.setAttribute('cy',p[0][1]);const paths=[[0,1,2],[1,3,4],[1,5,6],[2,7,8],[2,9,10]];card.lines.forEach((line,i)=>line.setAttribute('points',paths[i].map(n=>p[n].join(',')).join(' ')));}
+function stop(){cancelAnimationFrame(frame);if(active){active.button.textContent='Animation starten';active.button.setAttribute('aria-pressed','false');active.status.textContent='Animation pausiert';active=null;}}
+function tick(now){if(!active)return;const elapsed=(now-start)%4800;let t=(1-Math.cos(elapsed/4800*Math.PI*2))/2;if(active.key==='hip'&&active.variant===1)t=Math.min(1,t*1.7);paint(active,t);frame=requestAnimationFrame(tick);}
+Object.entries(DB).forEach(([key,variants])=>variants.forEach(([name,hint],variant)=>{
+const id='motion-'+key+'-'+variant;
+const article=document.createElement('article');article.className='panel motion-card';article.dataset.group=key;article.setAttribute('aria-labelledby',id);
+const svg=element('svg',{viewBox:'0 0 240 170',class:'motion-stage',role:'img','aria-label':'Schematische Bewegung: '+name},article);
+element('line',{x1:15,y1:150,x2:225,y2:150,class:'motion-ground'},svg);
+if(key==='push'&&variant===0)element('line',{x1:196,y1:15,x2:196,y2:150,class:'motion-ground'},svg);
+const lines=Array.from({length:5},()=>element('polyline',{},svg));const head=element('circle',{r:8},svg);
+const title=document.createElement('h3');title.id=id;title.textContent=name;article.append(title);
+const level=document.createElement('small');level.textContent=key==='cardio'?'Ausdauer · ohne Sprünge':levels[variant];article.append(level);
+const text=document.createElement('p');text.textContent=hint+' '+notes[key][variant];article.append(text);
+const button=document.createElement('button');button.type='button';button.textContent='Animation starten';button.setAttribute('aria-pressed','false');button.setAttribute('aria-label','Animation für '+name+' starten oder pausieren');article.append(button);
+const status=document.createElement('div');status.className='motion-status';status.textContent='Bereit · Start per Antippen';article.append(status);
+const card={key,variant,article,poses:poses[key][variant],head,lines,button,status};cards.push(card);paint(card,0);
+button.addEventListener('click',()=>{const same=active===card;stop();if(!same){active=card;start=performance.now();button.textContent='Animation pausieren';button.setAttribute('aria-pressed','true');status.textContent='Animation läuft';frame=requestAnimationFrame(tick);}});
+grid.append(article);
+}));
+document.getElementById('motion-filter').addEventListener('change',e=>{stop();cards.forEach(c=>c.article.hidden=e.target.value!=='all'&&c.key!==e.target.value);updateCount();});
+function updateCount(){document.getElementById('library-count').textContent=cards.filter(c=>!c.article.hidden).length+' Übungen';}
+// Spart Akku und verhindert Bewegung während Druckdialog oder Hintergrundbetrieb.
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
+window.addEventListener('beforeprint',stop);
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{for(const entry of entries)if(!entry.isIntersecting&&active&&active.article===entry.target)stop();});cards.forEach(c=>observer.observe(c.article));}
+updateCount();
+})();
+</script>
+<!-- Ende der animierten Übungsliste -->
+
+<style>
+.squat-3d{grid-column:1/-1}.squat-3d video{display:block;width:100%;max-height:70vh;aspect-ratio:4/3;object-fit:contain;background:#101713;border-radius:12px}.prototype-label{display:inline-block;background:#d1ef8a;color:#17200f;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:750;letter-spacing:.06em}.squat-3d h3{font-size:25px}.prototype-note{padding:15px;border:1px solid var(--line);border-radius:10px}.squat-3d .prototype-note{font-size:14px}.prototype-open{display:inline-block;color:#d1ef8a;margin:12px 0} @media print{.prototype-open{display:none}}
+</style>
+<script>
+(()=>{
+const cards=[...document.querySelectorAll('.motion-card')];
+const card=cards.find(c=>c.dataset.group==='squat'&&c.querySelector('h3').textContent==='Kniebeuge');
+if(!card)return;
+card.id='kniebeuge-3d';card.classList.add('squat-3d');document.getElementById('library-grid').prepend(card);
+const label=document.createElement('div');label.className='prototype-label';label.textContent='3D-PROTOTYP · KNIEBEUGE';card.prepend(label);
+const video=document.createElement('video');video.controls=true;video.loop=true;video.muted=true;video.playsInline=true;video.preload='none';video.poster='assets/kniebeuge-poster.jpg';video.setAttribute('aria-label','Erwachsene Sportlerin links und Sportler rechts führen eine Kniebeuge aus. Vollständige Körper, Ansicht schräg von vorn.');
+const source=document.createElement('source');source.src='assets/kniebeuge.mp4';source.type='video/mp4';video.append(source);card.querySelector('svg').replaceWith(video);
+const old=card.querySelector('button');const button=old.cloneNode(false);button.textContent='3D-Animation starten';button.setAttribute('aria-label','3D-Kniebeuge starten oder pausieren');old.replaceWith(button);
+const status=card.querySelector('.motion-status');status.textContent='Bereit · 5-Sekunden-Schleife · ohne Ton';
+const text=card.querySelector('p');text.textContent='Füße stabil aufsetzen, Knie folgen den Fußspitzen. Hüfte kontrolliert nach hinten und unten führen; Rücken angenehm stabil halten. Nur so tief gehen, wie es schmerzfrei und kontrolliert möglich ist.';
+const note=document.createElement('p');note.className='prototype-note';note.textContent='Echte 3D-Modelle und in Blender erzeugte Skelettanimation, als MP4 gerendert. Keine KI-Videoerzeugung. Bewegungsprototyp ohne fachliche biomechanische Freigabe; individuelle Beweglichkeit und Körperproportionen können abweichen.';card.append(note);
+button.addEventListener('click',async()=>{if(video.paused){try{await video.play();}catch(e){status.textContent='Wiedergabe nicht gestartet. Bitte den Play-Knopf im Video verwenden.';}}else video.pause();});
+video.addEventListener('play',()=>{document.querySelectorAll('.motion-card:not(.squat-3d) button[aria-pressed="true"]').forEach(b=>b.click());button.textContent='3D-Animation pausieren';button.setAttribute('aria-pressed','true');status.textContent='Animation läuft · Endlosschleife';});
+video.addEventListener('pause',()=>{button.textContent='3D-Animation starten';button.setAttribute('aria-pressed','false');status.textContent='Animation pausiert';});
+video.addEventListener('error',()=>{status.textContent='Video nicht verfügbar. assets/kniebeuge.mp4 gemeinsam mit index.html hochladen.';});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)video.pause();});window.addEventListener('beforeprint',()=>video.pause());
+if('IntersectionObserver'in window)new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)video.pause();}).observe(card);
+document.getElementById('motion-filter').addEventListener('change',()=>video.pause());
+document.getElementById('library-grid').addEventListener('click',e=>{if(e.target.closest('.motion-card:not(.squat-3d) button'))video.pause();});
+const jump=document.createElement('a');jump.href='#kniebeuge-3d';jump.textContent='↓ 3D-Kniebeugen-Prototyp ansehen';jump.className='prototype-open';document.querySelector('.hero').append(jump);
+})();
+</script>
+
+</body></html>
