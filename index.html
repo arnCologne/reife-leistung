@@ -837,14 +837,14 @@ generate();
   video.muted = true;
   video.playsInline = true;
   video.preload = 'none';
-  video.poster = 'assets/kniebeuge-poster.jpg';
+  video.poster = 'kniebeuge-3d/assets/kniebeuge-poster.jpg';
   video.setAttribute(
     'aria-label',
     'Erwachsene Sportlerin links und Sportler rechts führen eine Kniebeuge aus. Vollständige Körper, Ansicht schräg von vorn.'
   );
 
   const source = document.createElement('source');
-  source.src = 'assets/kniebeuge.mp4';
+  source.src = 'kniebeuge-3d/assets/kniebeuge.mp4';
   source.type = 'video/mp4';
   video.append(source);
 
