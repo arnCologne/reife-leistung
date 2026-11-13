@@ -48,24 +48,33 @@ button:hover{filter:brightness(1.12)}
 .print-day{display:none}
 footer{font-size:13px;color:var(--muted)}
 
-/* Animierte Übungsliste */
+/* Übungsbibliothek */
 .exercise-library{margin-top:36px}
 .library-heading{display:flex;justify-content:space-between;gap:18px;align-items:start;flex-wrap:wrap}
 .library-heading h2{margin:8px 0}
 .library-filter{max-width:280px}
+.library-filter label{margin-top:0}
 .library-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px}
+.library-intro{max-width:850px}
 .motion-card{padding:18px;display:flex;flex-direction:column}
 .motion-card[hidden]{display:none}
 .motion-card h3{margin:12px 0 5px}
 .motion-card p{font-size:14px;flex:1}
+.motion-card button{width:100%}
 .motion-stage{width:100%;height:auto;display:block;background:#111b15;border-radius:12px}
 .motion-stage line,.motion-stage polyline{stroke:#d1ef8a;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;fill:none}
 .motion-stage .motion-ground{stroke:#526255;stroke-width:1}
 .motion-stage circle{fill:#d1ef8a}
-.motion-card button{width:100%}
 .motion-status{font-size:13px;color:var(--muted);min-height:24px;margin-top:5px}
-.library-intro{max-width:850px}
-.library-filter label{margin-top:0}
+
+/* 3D-Kniebeugen-Prototyp */
+.squat-3d{grid-column:1/-1}
+.squat-3d video{display:block;width:100%;max-height:70vh;aspect-ratio:4/3;object-fit:contain;background:#101713;border-radius:12px}
+.squat-3d h3{font-size:25px}
+.prototype-label{display:inline-block;background:#d1ef8a;color:#17200f;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:750;letter-spacing:.06em}
+.prototype-note{padding:15px;border:1px solid var(--line);border-radius:10px}
+.squat-3d .prototype-note{font-size:14px}
+.prototype-open{display:inline-block;color:#d1ef8a;margin:12px 0}
 
 @media(max-width:950px){
   .library-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -88,7 +97,8 @@ footer{font-size:13px;color:var(--muted)}
   :root{color-scheme:light}
   body{background:white;color:black;font-size:11pt}
   header{padding:0}
-  .badge,.hero,form,.actions,.tabs,footer,.screen-day,.exercise-library{display:none!important}
+  .badge,.hero,form,.actions,.tabs,footer,.screen-day,
+  .exercise-library,.prototype-open{display:none!important}
   .layout{display:block}
   .panel{background:white;color:black;border:0;padding:0}
   .print-day{display:block;break-before:page}
@@ -116,6 +126,7 @@ footer{font-size:13px;color:var(--muted)}
     <div class="eyebrow">Bodyweight · Version 1.0</div>
     <h1>Stärker werden.<br>Mit einem Plan, der passt.</h1>
     <p class="muted">Dein Trainingsplaner für Bewegung ohne Geräte – einfach, individuell und direkt im Browser.</p>
+    <a class="prototype-open" href="#kniebeuge-3d">↓ 3D-Kniebeugen-Prototyp ansehen</a>
   </section>
 
   <div class="layout">
@@ -124,7 +135,8 @@ footer{font-size:13px;color:var(--muted)}
       <p class="muted">Ein paar Angaben. Eine Woche für dich.</p>
 
       <label for="age">Alter in Jahren</label>
-      <input id="age" name="age" type="number" min="18" max="100" value="55" required inputmode="numeric">
+      <input id="age" name="age" type="number" min="18" max="100"
+             value="55" required inputmode="numeric">
 
       <label for="level">Trainingslevel</label>
       <select id="level" name="level">
@@ -167,7 +179,8 @@ footer{font-size:13px;color:var(--muted)}
 
       <label for="equipment">Trainingsmittel</label>
       <div class="equipment">
-        <input id="equipment" type="checkbox" checked disabled>Keine Geräte
+        <input id="equipment" type="checkbox" checked disabled>
+        Keine Geräte
       </div>
       <small>Benötigt werden nur etwas Platz und ein rutschfester Untergrund.</small>
 
@@ -182,6 +195,7 @@ footer{font-size:13px;color:var(--muted)}
       <div class="panel">
         <div class="eyebrow">Deine Trainingswoche</div>
         <h2 style="margin-top:8px">Ein guter Anfang für mehr Bewegung.</h2>
+
         <div id="summary" aria-live="polite"></div>
 
         <div class="actions">
@@ -201,7 +215,8 @@ footer{font-size:13px;color:var(--muted)}
     </section>
   </div>
 
-  <section class="exercise-library" id="exercise-library" aria-labelledby="library-title">
+  <section class="exercise-library" id="exercise-library"
+           aria-labelledby="library-title">
     <div class="library-heading">
       <div>
         <div class="eyebrow">Bewegung verstehen</div>
@@ -221,8 +236,9 @@ footer{font-size:13px;color:var(--muted)}
       </div>
     </div>
 
-    <p class="muted library-intro">Alle 18 Übungen aus deinem Trainingsplaner als einfache Bewegungsanimation. Tippe auf „Animation starten“. Es läuft immer nur eine Animation gleichzeitig.</p>
-    <p class="muted library-intro"><small>Die Strichfiguren zeigen den Bewegungsablauf schematisch. Tempo, Bewegungsumfang und Körperproportionen sind keine exakte Technikvorgabe. Beachte immer die Übungshinweise und trainiere schmerzfrei. Wandliegestütze nutzen eine stabile Wand.</small></p>
+    <p class="muted library-intro">18 Übungen: Kniebeuge als 3D-Videoprototyp, die übrigen Übungen als schematische Animationen. Tippe auf „Animation starten“. Es läuft immer nur eine Animation gleichzeitig.</p>
+    <p class="muted library-intro"><small>Die übrigen 17 Strichfiguren zeigen den Bewegungsablauf schematisch. Tempo, Bewegungsumfang und Körperproportionen sind keine exakte Technikvorgabe. Beachte immer die Übungshinweise und trainiere schmerzfrei. Wandliegestütze nutzen eine stabile Wand.</small></p>
+
     <p id="library-count" class="muted" role="status"></p>
     <div id="library-grid" class="library-grid"></div>
   </section>
@@ -233,7 +249,7 @@ footer{font-size:13px;color:var(--muted)}
 <script>
 'use strict';
 
-// Kleine Übungsdatenbank: je Bewegungsmuster drei Schwierigkeitsstufen.
+/* Übungsdatenbank */
 const DB = {
   squat: [
     ['Kleine Kniebeuge', 'Hüfte nach hinten führen, Knie folgen den Fußspitzen. Nur so tief gehen, wie du sicher stehst.'],
@@ -281,11 +297,11 @@ const weekdays = [
   'Freitag','Samstag','Sonntag'
 ];
 
+const $ = id => document.getElementById(id);
+
 let current = null;
 let selected = 0;
 let revision = 0;
-
-const $ = id => document.getElementById(id);
 
 function readSettings() {
   return {
@@ -298,7 +314,7 @@ function readSettings() {
   };
 }
 
-// Geschätzte Dauer umfasst Arbeitszeit, Satzpausen und Übungswechsel.
+/* Trainingsplanung */
 function createPlan(s, seed) {
   const warm = s.duration >= 30 ? 6 : 4;
   const cool = s.duration >= 30 ? 4 : 3;
@@ -333,8 +349,7 @@ function createPlan(s, seed) {
   while (estimate(count, sets) > budget && sets > 1) sets--;
   while (estimate(count, sets) > budget && count > 2) count--;
 
-  const result = schedules[s.days].map((day, i) => {
-    // Höchstens drei Belastungstage; übrige Tage dienen aktiver Erholung.
+  const days = schedules[s.days].map((day, i) => {
     const light =
       (s.days >= 4 && i % 2 === 1)
       || (s.days === 6 && i === 5);
@@ -346,7 +361,8 @@ function createPlan(s, seed) {
         : s.level;
 
       const [name, hint] = DB[key][variant];
-      const timed = key === 'cardio'
+      const timed =
+        key === 'cardio'
         || (key === 'core' && s.level === 2);
 
       return {
@@ -368,7 +384,9 @@ function createPlan(s, seed) {
 
     const extra = Math.max(
       0,
-      Math.floor(s.duration - warm - cool - estimate(count, sets) / 60)
+      Math.floor(
+        s.duration - warm - cool - estimate(count, sets) / 60
+      )
     );
 
     return {
@@ -382,7 +400,7 @@ function createPlan(s, seed) {
     };
   });
 
-  return {settings:s, warm, cool, days:result};
+  return {settings:s, warm, cool, days};
 }
 
 function dayHTML(d, index, p) {
@@ -463,7 +481,9 @@ function render() {
     </button>`).join('');
 
   $('workouts').innerHTML = `
-    <div class="screen-day">${dayHTML(p.days[selected], selected, p)}</div>
+    <div class="screen-day">
+      ${dayHTML(p.days[selected], selected, p)}
+    </div>
     <div>
       ${p.days.map((d, i) => `
         <section class="print-day">${dayHTML(d, i, p)}</section>`
@@ -494,21 +514,17 @@ $('regenerate').addEventListener('click', generate);
 $('print').addEventListener('click', () => window.print());
 
 $('tabs').addEventListener('click', e => {
-  const b = e.target.closest('[data-day]');
-  if (b) {
-    selected = Number(b.dataset.day);
+  const button = e.target.closest('[data-day]');
+  if (button) {
+    selected = Number(button.dataset.day);
     render();
   }
 });
 
 generate();
 
-// Animierte Übungsliste
+/* Schematische Animationen der bisherigen Übungen */
 (() => {
-  'use strict';
-
-  // Punkte: Kopf, Schulter, Hüfte, linker Ellbogen/Hand,
-  // rechter Ellbogen/Hand, linkes Knie/Fuß, rechtes Knie/Fuß.
   const stand=[[120,28],[120,45],[120,90],[102,65],[100,87],[138,65],[140,87],[105,119],[98,148],[135,119],[142,148]];
   const squatSmall=[[113,39],[114,56],[131,97],[98,70],[88,78],[100,70],[90,78],[103,117],[98,148],[139,119],[142,148]];
   const squatDeep=[[105,57],[107,74],[137,109],[88,75],[71,74],[92,76],[76,74],[105,120],[98,148],[142,123],[142,148]];
@@ -523,6 +539,7 @@ generate();
 
   const supine=[[40,136],[57,137],[116,137],[78,143],[105,147],[78,132],[104,132],[149,103],[177,148],[145,106],[171,148]];
   const bridge=[[40,136],[57,137],[110,104],[78,143],[105,147],[78,132],[104,132],[149,103],[177,148],[145,106],[171,148]];
+
   const bridgeMarch=bridge.map(p=>p.slice());
   bridgeMarch[9]=[118,72];bridgeMarch[10]=[155,91];
 
@@ -532,6 +549,7 @@ generate();
   const deadA=[[40,136],[57,137],[116,137],[62,109],[66,79],[67,111],[72,81],[121,100],[158,100],[131,104],[167,104]];
   const deadB=[[40,136],[57,137],[116,137],[39,115],[15,96],[67,111],[72,81],[151,132],[188,144],[131,104],[167,104]];
   const plankA=[[181,81],[165,94],[105,115],[159,148],[190,148],[149,145],[179,145],[70,130],[36,148],[65,127],[31,145]];
+
   const plankB=plankA.map(p=>p.slice());
   plankB[0][1]-=1;plankB[1][1]-=1;
 
@@ -560,50 +578,52 @@ generate();
   boxB[5]=[145,48];boxB[6]=[168,46];boxB[3]=[100,62];boxB[4]=[103,41];boxB[10]=[153,148];
 
   const poses = {
-    squat: [[stand,squatSmall],[stand,squatDeep],[stand,squatDeep]],
-    push: [[wallA,wallB],[kneeA,kneeB],[pushA,pushB]],
-    hip: [[supine,bridge],[supine,bridge],[bridge,bridgeMarch]],
-    core: [[heelA,heelB],[deadA,deadB],[plankA,plankB]],
-    back: [[wA,wB],[proneA,proneB],[angelsA,angelsB]],
-    cardio: [[marchA,marchB],[stepA,stepB],[boxA,boxB]]
+    squat:[[stand,squatSmall],[stand,squatDeep],[stand,squatDeep]],
+    push:[[wallA,wallB],[kneeA,kneeB],[pushA,pushB]],
+    hip:[[supine,bridge],[supine,bridge],[bridge,bridgeMarch]],
+    core:[[heelA,heelB],[deadA,deadB],[plankA,plankB]],
+    back:[[wA,wB],[proneA,proneB],[angelsA,angelsB]],
+    cardio:[[marchA,marchB],[stepA,stepB],[boxA,boxB]]
   };
 
-  const levels = ['Anfänger','Fortgeschritten','Sehr fortgeschritten'];
+  const levels = [
+    'Anfänger','Fortgeschritten','Sehr fortgeschritten'
+  ];
 
   const notes = {
-    squat: [
+    squat:[
       'Kleine, kontrollierte Bewegung.',
       'Nur so tief gehen, wie du stabil bleibst.',
       'Drei Sekunden absenken; Animation zeigt nur den Ablauf.'
     ],
-    push: [
+    push:[
       'Die senkrechte Linie stellt die Wand dar.',
       'Knie am Boden lassen.',
       'Körper als Einheit bewegen.'
     ],
-    hip: [
+    hip:[
       'Becken anheben und wieder ablegen.',
       'Oben zwei Sekunden halten.',
       'Oben abwechselnd eine Ferse entlasten; beide Seiten trainieren.'
     ],
-    core: [
+    core:[
       'Langsam schieben, beide Seiten abwechseln.',
       'Gegenüberliegenden Arm und Bein bewegen; beide Seiten trainieren.',
       'Statische Halteübung: Position halten, dabei ruhig atmen.'
     ],
-    back: [
+    back:[
       'Schulterblätter sanft bewegen, nicht hochziehen.',
       'Nur wenige Zentimeter anheben; Nacken lang.',
       'Arme bodennah bewegen; Darstellung aus schräger Perspektive.'
     ],
-    cardio: [
+    cardio:[
       'Abwechselnd die Füße anheben.',
       'Seitlich treten, ohne zu springen.',
       'Locker boxen und kleine Schritte ergänzen.'
     ]
   };
 
-  const grid = document.getElementById('library-grid');
+  const grid = $('library-grid');
   const cards = [];
   const ns = 'http://www.w3.org/2000/svg';
 
@@ -620,12 +640,12 @@ generate();
 
   function paint(card, t) {
     const [a,b] = card.poses;
-    const p = a.map((point,i) =>
+    const points = a.map((point,i) =>
       point.map((v,j) => v + (b[i][j] - v) * t)
     );
 
-    card.head.setAttribute('cx', p[0][0]);
-    card.head.setAttribute('cy', p[0][1]);
+    card.head.setAttribute('cx', points[0][0]);
+    card.head.setAttribute('cy', points[0][1]);
 
     const paths = [
       [0,1,2],[1,3,4],[1,5,6],[2,7,8],[2,9,10]
@@ -634,13 +654,14 @@ generate();
     card.lines.forEach((line,i) => {
       line.setAttribute(
         'points',
-        paths[i].map(n => p[n].join(',')).join(' ')
+        paths[i].map(n => points[n].join(',')).join(' ')
       );
     });
   }
 
   function stop() {
     cancelAnimationFrame(frame);
+
     if (active) {
       active.button.textContent = 'Animation starten';
       active.button.setAttribute('aria-pressed','false');
@@ -663,8 +684,8 @@ generate();
     frame = requestAnimationFrame(tick);
   }
 
-  Object.entries(DB).forEach(([key,variants]) => {
-    variants.forEach(([name,hint],variant) => {
+  Object.entries(DB).forEach(([key, variants]) => {
+    variants.forEach(([name, hint], variant) => {
       const id = 'motion-' + key + '-' + variant;
 
       const article = document.createElement('article');
@@ -753,26 +774,27 @@ generate();
   });
 
   function updateCount() {
-    document.getElementById('library-count').textContent =
+    $('library-count').textContent =
       cards.filter(c => !c.article.hidden).length + ' Übungen';
   }
 
-  document.getElementById('motion-filter').addEventListener('change', e => {
+  $('motion-filter').addEventListener('change', e => {
     stop();
+
     cards.forEach(c => {
       c.article.hidden =
         e.target.value !== 'all' && c.key !== e.target.value;
     });
+
     updateCount();
   });
 
-  // Pausiert bei Hintergrundbetrieb und beim Drucken.
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) stop();
   });
+
   window.addEventListener('beforeprint', stop);
 
-  // Pausiert, sobald die laufende Animation aus dem Bild scrollt.
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
       for (const entry of entries) {
@@ -783,10 +805,127 @@ generate();
         }
       }
     });
+
     cards.forEach(c => observer.observe(c.article));
   }
 
   updateCount();
+})();
+
+/* Kniebeuge durch den echten 3D-Videoprototyp ersetzen */
+(() => {
+  const cards = [...document.querySelectorAll('.motion-card')];
+  const card = cards.find(c =>
+    c.dataset.group === 'squat'
+    && c.querySelector('h3').textContent === 'Kniebeuge'
+  );
+
+  if (!card) return;
+
+  card.id = 'kniebeuge-3d';
+  card.classList.add('squat-3d');
+  $('library-grid').prepend(card);
+
+  const label = document.createElement('div');
+  label.className = 'prototype-label';
+  label.textContent = '3D-PROTOTYP · KNIEBEUGE';
+  card.prepend(label);
+
+  const video = document.createElement('video');
+  video.controls = true;
+  video.loop = true;
+  video.muted = true;
+  video.playsInline = true;
+  video.preload = 'none';
+  video.poster = 'assets/kniebeuge-poster.jpg';
+  video.setAttribute(
+    'aria-label',
+    'Erwachsene Sportlerin links und Sportler rechts führen eine Kniebeuge aus. Vollständige Körper, Ansicht schräg von vorn.'
+  );
+
+  const source = document.createElement('source');
+  source.src = 'assets/kniebeuge.mp4';
+  source.type = 'video/mp4';
+  video.append(source);
+
+  card.querySelector('svg').replaceWith(video);
+
+  const oldButton = card.querySelector('button');
+  const button = oldButton.cloneNode(false);
+  button.textContent = '3D-Animation starten';
+  button.setAttribute(
+    'aria-label',
+    '3D-Kniebeuge starten oder pausieren'
+  );
+  oldButton.replaceWith(button);
+
+  const status = card.querySelector('.motion-status');
+  status.textContent = 'Bereit · 5-Sekunden-Schleife · ohne Ton';
+
+  card.querySelector('p').textContent =
+    'Füße stabil aufsetzen, Knie folgen den Fußspitzen. Hüfte kontrolliert nach hinten und unten führen; Rücken angenehm stabil halten. Nur so tief gehen, wie es schmerzfrei und kontrolliert möglich ist.';
+
+  const note = document.createElement('p');
+  note.className = 'prototype-note';
+  note.textContent =
+    'Echte 3D-Modelle und in Blender erzeugte Skelettanimation, als MP4 gerendert. Keine KI-Videoerzeugung. Bewegungsprototyp ohne fachliche biomechanische Freigabe; individuelle Beweglichkeit und Körperproportionen können abweichen.';
+  card.append(note);
+
+  button.addEventListener('click', async () => {
+    if (video.paused) {
+      try {
+        await video.play();
+      } catch (error) {
+        status.textContent =
+          'Wiedergabe nicht gestartet. Bitte den Play-Knopf im Video verwenden.';
+      }
+    } else {
+      video.pause();
+    }
+  });
+
+  video.addEventListener('play', () => {
+    document.querySelectorAll(
+      '.motion-card:not(.squat-3d) button[aria-pressed="true"]'
+    ).forEach(b => b.click());
+
+    button.textContent = '3D-Animation pausieren';
+    button.setAttribute('aria-pressed','true');
+    status.textContent = 'Animation läuft · Endlosschleife';
+  });
+
+  video.addEventListener('pause', () => {
+    button.textContent = '3D-Animation starten';
+    button.setAttribute('aria-pressed','false');
+    status.textContent = 'Animation pausiert';
+  });
+
+  video.addEventListener('error', () => {
+    status.textContent =
+      'Video nicht verfügbar. assets/kniebeuge.mp4 gemeinsam mit index.html hochladen.';
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) video.pause();
+  });
+
+  window.addEventListener('beforeprint', () => video.pause());
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) video.pause();
+    }).observe(card);
+  }
+
+  $('motion-filter').addEventListener('change', () => {
+    video.pause();
+  });
+
+  $('library-grid').addEventListener('click', e => {
+    if (e.target.closest('.motion-card:not(.squat-3d) button')) {
+      video.pause();
+    }
+  });
 })();
 </script>
 </body>
